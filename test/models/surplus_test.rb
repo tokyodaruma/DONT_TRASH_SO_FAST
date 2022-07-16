@@ -1,6 +1,6 @@
 require "test_helper"
 
-class SurpluTest < ActiveSupport::TestCase
+class SurplusTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
