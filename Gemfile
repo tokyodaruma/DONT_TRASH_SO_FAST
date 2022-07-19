@@ -31,6 +31,8 @@ gem 'devise'
 # Faker gem for seeds.rb
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
+# add pundit for authorization
+gem 'pundit', '~> 2.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
