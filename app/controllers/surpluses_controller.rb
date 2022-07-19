@@ -1,5 +1,4 @@
 class SurplusesController < ApplicationController
-
   def index
     @surplus = Surplus.all
   end
@@ -19,6 +18,7 @@ class SurplusesController < ApplicationController
       render :new
     end
   end
+  
   private
 
   def surplus_params
