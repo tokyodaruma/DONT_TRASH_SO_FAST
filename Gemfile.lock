@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/heartcombo/simple_form.git
-  revision: 8b8cea1dbd85be82876c612a020a1522b7c9941f
+  revision: 31fe25504771bd6cd425b585a4e0ed652fba4521
   specs:
     simple_form (5.1.0)
       actionpack (>= 5.2)
@@ -284,4 +284,4 @@ RUBY VERSION
    ruby 3.0.3p157
 
 BUNDLED WITH
-   2.3.10
+   2.3.15
