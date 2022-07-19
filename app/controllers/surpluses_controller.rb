@@ -12,6 +12,7 @@ class SurplusesController < ApplicationController
 
   def create
     @surplus = Surplus.new(surplus_params)
+    @surplus.user = current_user
     if @surplus.save
       redirect_to surplus_path(@surplus)
     else
