@@ -1,6 +1,6 @@
-class CreateSurplus < ActiveRecord::Migration[6.1]
+class CreateSurpluses < ActiveRecord::Migration[6.1]
   def change
-    create_table :surplus do |t|
+    create_table :surpluses do |t|
       t.integer :category
       t.text :description
       t.string :location
