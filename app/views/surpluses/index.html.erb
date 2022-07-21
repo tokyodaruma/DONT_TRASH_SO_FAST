@@ -14,7 +14,7 @@
             <%= link_to "Home", "#", class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+            <%= link_to "Surpluses", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -44,7 +44,7 @@
 <% end %>
 
 <div class="cards">
-  <%# <h1>Results <%= Surplus.count %>
+  <h1>Results <%= Surplus.count %> </h1>
     <% @surpluses.each do |surplus| %>
       <%# <% if surplus.photo.attached? %>
         <%# <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path surplus.photo.key, height: 300, crop: :fill %>
