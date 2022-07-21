@@ -1,0 +1,21 @@
+<h1>Bookings Index</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Surplus</th>
+      <th scope="col">Date</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookings.each_with_index do |booking, index| %>
+    <tr>
+      <th scope="row"><%= index + 1 %></th>
+      <td><%= booking.surplus.description %></td>
+      <td><%=  booking.date  %></td>
+      <td><%= booking.status %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
