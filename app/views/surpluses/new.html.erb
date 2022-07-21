@@ -10,7 +10,7 @@
         <h3>Create a new surplus</h3>
         <%= simple_form_for @surplus, url: surpluses_path do |f| %>
           <%= f.input :photo, as: :file %>
-          <%= f.input :category, placeholder: 'Italian' %>
+          <%= f.input :category, placeholder: 'A glass of jam' %>
           <%= f.input :description %>
           <%= f.input :location %>
           <%= f.input :quantity %>
