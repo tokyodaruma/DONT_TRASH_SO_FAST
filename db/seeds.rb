@@ -9,7 +9,7 @@ puts 'Planting new seeds.'
 10.times do
   file = URI.open('https://loremflickr.com/320/240/bread')
   surplus = Surplus.create!(
-    category: rand(1..5),
+    category: Surplus.categories.keys.sample,
     description: Faker::Food.description,
     location: ['Meguro, Tokyo', 'Kamata, Tokyo', 'Nagoya, Aichi', 'Sapporo, Hokkaido', 'Matsumoto, Nagano'].sample,
     user_id: 2,
@@ -22,7 +22,7 @@ end
 10.times do
   Booking.create!(
     date: rand(1..14),
-    status: %i[pending accepted rejected].sample,
+    status: Booking.statuses.keys.sample,
     user_id: 2,
     surplus_id: Surplus.all.sample.id
   )
