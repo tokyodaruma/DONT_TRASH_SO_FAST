@@ -4,7 +4,8 @@ class SurplusesController < ApplicationController
     @surpluses = policy_scope(Surplus).order(created_at: :desc)
   end
 
-  # show
+  def show
+  end
 
   def new
     @surplus = Surplus.new
