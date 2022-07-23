@@ -10,11 +10,12 @@
         <h3>Create a new surplus</h3>
         <%= simple_form_for @surplus, url: surpluses_path do |f| %>
           <%= f.input :photo, as: :file %>
-          <%= f.input :category, placeholder: 'A glass of jam' %>
+          <%# <%= f.input :category, placeholder: 'restaurant, individual, etc.' %>
+          <%= f.input :category, collection: ["bakery", "butcher", "individual", "ngo", "restaurant", "others"]%>
           <%= f.input :description %>
           <%= f.input :location %>
           <%= f.input :quantity %>
-          <%= f.submit class: 'btn btn-flat' %>
+          <%= f.submit class: 'btn btn-success' %>
         <% end %>
       </div>
     </div>
