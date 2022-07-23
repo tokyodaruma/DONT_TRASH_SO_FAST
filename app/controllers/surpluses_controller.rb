@@ -1,10 +1,13 @@
 class SurplusesController < ApplicationController
+  before_action :find_surplus, only: %i[show]
 
   def index
     @surpluses = policy_scope(Surplus).order(created_at: :desc)
   end
 
-  # show
+  def show
+    authorize @surplus
+  end
 
   def new
     @surplus = Surplus.new
@@ -24,6 +27,10 @@ class SurplusesController < ApplicationController
   end
 
   private
+
+  def find_surplus
+    @surplus = Surplus.find(params[:id])
+  end
 
   def surplus_params
     params.require(:surplus).permit(:photo, :category, :description, :location, :quantity)
