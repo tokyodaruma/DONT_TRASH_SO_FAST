@@ -1,11 +1,13 @@
-<div class="position-relative">
-  <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)) %> ">
-    <%=  @surplus.category %>
-    <%=  @surplus.location %>
-    <%=  @surplus.description %>
-    <%=  @surplus.quantity %>
-<img id="map" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/frontend/map-static.png">
-
-<%= link_to "book this surplus", surplus_bookings_path(@surplus), class: "btn btn-primary" %>
+<div class="container">
+  <div class="position-relative">
+    <h4 class="card-header"><%=  @surplus.location %></h4>
+    <div class="card-category-show card-large">
+      <img id="map" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/frontend/map-static.png">
+      <div class="card-body">
+        <h4 class="card-title">Type: <%= @surplus.category  %></h4>
+        <p class="card-text"><%=  @surplus.description %></p>
+        <%= link_to "book this surplus", surplus_bookings_path(@surplus), class: "btn btn-primary" %>
+      </div>
+    </div>
   </div>
 </div>
