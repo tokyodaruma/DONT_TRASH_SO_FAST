@@ -1,22 +1,26 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url();">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= image_path 'pineapples.jpg' %>)">
   <div class="container">
-    <h1>Don't trash so fast brings <strong>down the carbon footprint </strong> from <strong>our dear planet</strong>!</h1>
-    <p>Change your life and don't trash food,learn to make the most of the beautiful ingredients around the world.</p>
-    <a class="btn btn-flat" href="#">Apply now for some surplusses aka leftovers</a>
+    <h1>Don't trash so fast! Bring <strong>down the carbon footprint </strong> from <strong>our dear planet</strong>!</h1>
+    <p>Don't trash food, learn to make the most of the beautiful ingredients around the world.</p>
+    <a class="btn btn-success" href="#">Book surpluses now</a>
   </div>
 </div>
 
 <div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(pineapples.jpg)">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'avocado.jpg' %>)">
     <%= link_to "Breakfast", surpluses_path %>
   </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(red_fruits.jpg)">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'steak.jpg' %>)">
     <%= link_to "Lunch", surpluses_path %>
   </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(blueberries.jpg)">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'schnitzel.jpg' %>)">
     <%= link_to "Dinner", surpluses_path %>
+  </div>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'macaron.jpg' %>)">
+    <%= link_to "Coffee", surpluses_path %>
   </div>
 </div>
