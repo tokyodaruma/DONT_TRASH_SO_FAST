@@ -1,15 +1,10 @@
-<%# iteration of surpluses  %>
-<%# image, category, location, description, quantity %>
-
 <div class="position-relative">
-  <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)) %>
+  <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)) %> ">
 
-    <% @surpluses.each do |surplus| %>
-    <%=  surplus.category %>
-    <%=  surplus.location %>
-    <%=  surplus.description %>
-    <%=  surplus.quantity %>
-    <% end %>
+    <%=  @surplus.category %>
+    <%=  @surplus.location %>
+    <%=  @surplus.description %>
+    <%=  @surplus.quantity %>
 
     <%= link_to "book this surplus", surpluses_path, class: "btn btn-primary" %>
 
