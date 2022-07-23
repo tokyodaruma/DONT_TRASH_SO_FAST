@@ -5,6 +5,7 @@ class SurplusesController < ApplicationController
   end
 
   def show
+    @surplus = Surplus.find(surplus_params[:id])
   end
 
   def new
