@@ -1,12 +1,11 @@
 <div class="position-relative">
   <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)) %> ">
-
     <%=  @surplus.category %>
     <%=  @surplus.location %>
     <%=  @surplus.description %>
     <%=  @surplus.quantity %>
+<img id="map" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/frontend/map-static.png">
 
-    <%= link_to "book this surplus", surpluses_path, class: "btn btn-primary" %>
-
+<%= link_to "book this surplus", surplus_bookings_path(@surplus), class: "btn btn-primary" %>
   </div>
 </div>
