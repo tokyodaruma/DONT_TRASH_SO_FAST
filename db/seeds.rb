@@ -12,7 +12,7 @@ puts 'Planting new seeds.'
     category: Surplus.categories.keys.sample,
     description: Faker::Food.description,
     location: ['Meguro, Tokyo', 'Kamata, Tokyo', 'Nagoya, Aichi', 'Sapporo, Hokkaido', 'Matsumoto, Nagano'].sample,
-    user_id: 2,
+    user_id: 1,
     quantity: rand(1..10)
   )
   surplus.photo.attach(io: file, filename: 'leftovers.png', content_type: 'image/png')
@@ -23,7 +23,7 @@ end
   Booking.create!(
     date: rand(1..14),
     status: Booking.statuses.keys.sample,
-    user_id: 2,
+    user_id: 1,
     surplus_id: Surplus.all.sample.id
   )
   puts 'creating new booking entry based on user and surplus'
