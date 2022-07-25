@@ -7,13 +7,14 @@ Surplus.destroy_all
 puts 'Planting new seeds.'
 
 10.times do
-  file = URI.open('https://loremflickr.com/320/240/bread')
+  file = URI.open('https://loremflickr.com/320/240/vegetable')
   surplus = Surplus.create!(
     category: Surplus.categories.keys.sample,
-    description: Faker::Food.description,
+    name: Faker::Food.vegetables,
+    description: 'Hope to find a happy plate for these ingredients',
     location: ['Meguro, Tokyo', 'Kamata, Tokyo', 'Nagoya, Aichi', 'Sapporo, Hokkaido', 'Matsumoto, Nagano'].sample,
     user_id: 1,
-    quantity: rand(1..10)
+    quantity: rand(1..200)
   )
   surplus.photo.attach(io: file, filename: 'leftovers.png', content_type: 'image/png')
   puts 'creating new surplus entry'

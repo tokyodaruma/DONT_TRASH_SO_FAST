@@ -3,9 +3,19 @@ class SurplusesController < ApplicationController
 
   def index
     @surpluses = policy_scope(Surplus).order(created_at: :desc)
+    if params[:query].present?
+      @surpluses = Surplus.search_by_name_and_location_and_quantity(params[:query])
+    else
+      @surpluses.all
+    end
   end
 
   def show
+    @markers = [
+      lat: @surplus.latitude,
+      lng: @surplus.longitude
+    ]
+    @booking = Booking.new
     authorize @surplus
   end
 
