@@ -4,9 +4,11 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
     @surplus = Surplus.find(params[:surplus_id])
+    @booking = Booking.new(booking_params)
     @booking.surplus = @surplus
+    @booking.user = current_user
+    @booking.status = 'pending'
     if @booking.save
       redirect_to bookings_path
     else
@@ -18,6 +20,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:date)
+    params.require(:booking).permit(:date, :status)
   end
 end
