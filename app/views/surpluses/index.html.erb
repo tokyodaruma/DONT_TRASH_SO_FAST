@@ -1,26 +1,26 @@
 <div class="container">
   <%= form_tag surpluses_path, method: :get do %>
-    <div class="search-form-control form-group mb-3">
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control string required",
-          placeholder: "Find local leftovers"
-        %>
-        <%= submit_tag "Search", class: "btn btn-ghost" %>
-    </div>
+  <div class="search-form-control form-group mb-3">
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control string required",
+        placeholder: "Find local leftovers"
+      %>
+      <%= submit_tag "Search", class: "btn btn-ghost" %>
+  </div>
   <% end %>
-    <p>Results <%= @count %></p>
-    <div class="content">
-        <%=  render 'shared/surplus_index_card' %>
-      <div class="mx-3">
-        <div style="width: 500px; height: 500px;" class=index-map
-          data-controller="mapbox"
-          data-mapbox-markers-value="<%= @markers.to_json %>"
-          data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
+  <p>Results <%= @count %></p>
+  <div class="content">
+      <%=  render 'shared/surplus_index_card' %>
+    <div class="mx-3">
+      <div style="width: 500px; height: 500px;" class=index-map
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
-      <div class="text-center my-4">
-        <%= link_to 'Create a new surplus', new_surplus_path, class: "btn btn-success" %>
-      </div>
+  </div>
+    <div class="text-center my-4">
+      <%= link_to 'Create a new surplus', new_surplus_path, class: "btn btn-success" %>
+    </div>
 </div>
