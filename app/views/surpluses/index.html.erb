@@ -9,10 +9,21 @@
         <%= submit_tag "Search", class: "btn btn-ghost" %>
     </div>
   <% end %>
-  <!-- <p>Results <%= Surplus.count %> </p> -->
-  <%=  render 'shared/surplus_index_card' %>
 
-  <div class="text-center my-4">
-    <%= link_to 'Create a new surplus', new_surplus_path, class: "btn btn-success" %>
+  <!-- <p>Results <%= Surplus.count %> </p> -->
+  <div class="content">
+    <div class="mr-3">
+      <%=  render 'shared/surplus_index_card' %>
+    </div>
+    <div class="mx-3">
+      <div style="width: 500px; height: 500px;" class=index-map
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
   </div>
+    <div class="text-center my-4">
+      <%= link_to 'Create a new surplus', new_surplus_path, class: "btn btn-success" %>
+    </div>
 </div>
