@@ -1,21 +1,34 @@
-<h1>Bookings Index</h1>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Surplus</th>
-      <th scope="col">Date</th>
-      <th scope="col">Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @bookings.each_with_index do |booking, index| %>
-    <tr>
-      <th scope="row"><%= index + 1 %></th>
-      <td><%= booking.surplus.description %></td>
-      <td><%=  booking.date  %></td>
-      <td><%= booking.status %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<h1>My Bookings</h1>
+
+    <% @bookings.each do |booking| %>
+      <div class="container">
+      <div class="row">
+      <div class="card-product">
+        <img src= <%= cl_image_path booking.surplus.photo.key, height: 300, crop: :fill %>>
+          <div class="card-product-infos">
+        <%# <h2> <%= link_to booking.surplus.category, surplus_path(surplus) %>
+          <div class="col-6 flex-grow">
+            <div> <h2> Surplus </h2>
+            <p> <%= booking.surplus.description %> </p></div>
+          </div>
+          <div class="col">
+            <div><h2> Date</h2>
+            <p> <%= booking.date  %> </p></div>
+          </div>
+          <div class="col">
+            <div><h2> Status </h2>
+              <% if booking.status == "accepted" %>
+              <%# <button type="button" disabled class="btn btn-success"><%= booking.status %>
+                <strong> <p style="color:green">  Accepted </p> </strong>
+              <% elsif booking.status == "pending"%>
+                <strong> <p style="color:orange">  Pending </p> </strong>
+              <% else %>
+                <strong> <p style="color:red">  Rejected </p> </strong>
+              <% end %>
+            </div>
+          </div>
+          </div>
+      </div>
+        </div>
+      </div>
+      <% end %>
