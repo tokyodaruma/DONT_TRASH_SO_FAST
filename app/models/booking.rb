@@ -4,5 +4,5 @@ class Booking < ApplicationRecord
 
   enum status: %i[pending accepted rejected]
   validates :status, inclusion: { in: statuses.keys }
-  validates :date, :status, presence: true
+  validates :status, presence: true
 end
