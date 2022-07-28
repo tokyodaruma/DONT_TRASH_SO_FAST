@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
+
   def index
-    @bookings = policy_scope(Booking).order(created_at: :desc)
+    @bookings = policy_scope(lister ,Booking).order(created_at: :desc)
+  authorize([:lister, @booking])
   end
 
   def create
