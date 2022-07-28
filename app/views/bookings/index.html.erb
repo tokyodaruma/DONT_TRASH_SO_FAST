@@ -2,21 +2,25 @@
 
     <% @bookings.each do |booking| %>
       <div class="container">
-      <div class="row">
+      <div class="row g-0">
       <div class="card-product">
         <img src= <%= cl_image_path booking.surplus.photo.key, height: 300, crop: :fill %>>
           <div class="card-product-infos">
         <%# <h2> <%= link_to booking.surplus.category, surplus_path(surplus) %>
           <div class="col-6 flex-grow">
-            <div> <h2> Surplus </h2>
-            <p> <%= booking.surplus.description %> </p></div>
+            <div> <h2>Surplus </h2>
+            <p><%= booking.surplus.description %></p></div>
           </div>
           <div class="col">
-            <div><h2> Date</h2>
-            <p> <%= booking.date  %> </p></div>
+            <div><h2>Pick Up Date</h2>
+            <p> <%= booking.date.strftime("%F")  %> </p></div>
           </div>
           <div class="col">
-            <div><h2> Status </h2>
+            <div><h2>Pick Up Time</h2>
+            <p> <%= booking.date.strftime("%H:%M")  %> </p></div>
+          </div>
+          <div class="col">
+            <div><h2>Status</h2>
               <% if booking.status == "accepted" %>
               <%# <button type="button" disabled class="btn btn-success"><%= booking.status %>
                 <strong> <p style="color:green">  Accepted </p> </strong>
