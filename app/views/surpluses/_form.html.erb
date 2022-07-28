@@ -1,0 +1,8 @@
+<%= simple_form_for @surplus, url: surpluses_path do |f| %>
+          <%= f.input :photo, as: :file %>
+          <%= f.input :category, collection: ["bakery", "butcher", "individual", "ngo", "restaurant", "others"]%>
+          <%= f.input :description %>
+          <%= f.input :location %>
+          <%= f.input :quantity %>
+          <%= f.submit class: 'btn btn-success' %>
+        <% end %>

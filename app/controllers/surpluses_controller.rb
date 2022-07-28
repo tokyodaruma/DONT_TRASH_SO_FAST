@@ -1,5 +1,5 @@
 class SurplusesController < ApplicationController
-  before_action :find_surplus, only: %i[show]
+  before_action :find_surplus, only: %i[show edit]
 
   def index
     @surpluses = policy_scope(Surplus).order(created_at: :desc)
@@ -26,6 +26,8 @@ class SurplusesController < ApplicationController
     @booking = Booking.new
     authorize @surplus
   end
+
+  def edit; end
 
   def new
     @surplus = Surplus.new
