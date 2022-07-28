@@ -17,9 +17,20 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      redirect_to bookings_path
+
+    else
+       render 'bookings/index'# where was the booking update form?
+    end
+  end
+
   private
 
   def booking_params
+    # TODO: check your model, might be different than mine
     params.require(:booking).permit(:date, :status)
   end
 end
