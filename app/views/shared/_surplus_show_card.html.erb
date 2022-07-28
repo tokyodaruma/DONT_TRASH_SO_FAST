@@ -7,13 +7,16 @@
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
       <div class="card-body">
-        <h4 class="card-title">Type: <%= @surplus.category  %></h4>
+        <h4 class="card-title"> <%= image_tag "storefront.svg" %> <%= @surplus.category %></h4>
+        <h4 class="card-name"><%=  @surplus.name %></h4>
+        <img src="<%= cl_image_path(@surplus.photo.key, width: 300, height: 300, crop: :fill) %>" alt="<%= @surplus.name %>">
+        <div class="date-section">
+          <%= simple_form_for [@surplus, @booking] do |f| %>
+            <%= f.input :date, label: false, html5: true %>
+            <%= f.submit class: 'btn btn-success' %>
+          <% end %>
+        </div>
         <p class="card-text"><%=  @surplus.description %></p>
-        <%= link_to "book this surplus", surplus_bookings_path(@surplus), class: "btn btn-primary" %>
-        <%= simple_form_for [@surplus, @booking] do |f| %>
-          <%= f.input :date %>
-          <%= f.submit class: 'btn btn-success' %>
-        <% end %>
       </div>
   </div>
 </div>
