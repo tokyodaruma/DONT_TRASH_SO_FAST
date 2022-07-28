@@ -5,5 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :bookings
-  has_many :surpluses, through: :booking
+  has_many :surpluses, through: :bookings
+
+  def lister?
+    self.surpluses.any?
+  end
 end
