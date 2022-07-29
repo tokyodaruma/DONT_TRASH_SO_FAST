@@ -1,26 +1,33 @@
-
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= image_path 'pineapples.jpg' %>)">
-  <div class="container">
-    <h1>Don't trash so fast! Bring <strong>down the carbon footprint </strong> from <strong>our dear planet</strong>!</h1>
-    <p>Don't trash food, learn to make the most of the beautiful ingredients around the world.</p>
-    <a class="btn btn-success" href="#">Book surpluses now</a>
+  <div class="container-home flex-column align-items-center">
+    <div class="banner-text mb-3">
+      <h1>Don't trash so fast! Bring <strong>down the carbon footprint </strong> for <strong> our dear planet</strong>!</h1>
+      <p>Learn to make the most of leftovers that are still fresh and ready to eat.</p>
+    </div>
+    <%= form_tag surpluses_path, method: :get do %>
+    <div class="search-form-home-control form-group mt-5">
+      <input type="text"
+        name="query"
+        id="query"
+        class="form-control string required"
+        data-controller='search'>
+      <%= submit_tag "Submit", class: "btn btn-ghost" %>
+    </div>
+    <% end %>
   </div>
 </div>
 
+
 <div class="cards">
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'avocado.jpg' %>)">
-    <%= link_to "Breakfast", surpluses_path %>
+    <%= link_to "Cafes", surpluses_path %>
   </div>
 
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'steak.jpg' %>)">
-    <%= link_to "Lunch", surpluses_path %>
+    <%= link_to "NGOs", surpluses_path %>
   </div>
 
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'schnitzel.jpg' %>)">
-    <%= link_to "Dinner", surpluses_path %>
-  </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'macaron.jpg' %>)">
-    <%= link_to "Coffee", surpluses_path %>
+    <%= link_to "Individuals", surpluses_path %>
   </div>
 </div>
