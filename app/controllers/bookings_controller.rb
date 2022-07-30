@@ -1,8 +1,7 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = policy_scope(lister ,Booking).order(created_at: :desc)
-  authorize([:lister, @booking])
+    @bookings = policy_scope([:lister, Booking]).order(created_at: :desc)
   end
 
   def create
@@ -25,7 +24,7 @@ class BookingsController < ApplicationController
       redirect_to bookings_path
 
     else
-       render 'bookings/index'# where was the booking update form?
+      render 'bookings/index'# where was the booking update form?
     end
   end
 

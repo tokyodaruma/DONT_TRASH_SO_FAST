@@ -14,7 +14,7 @@
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-          <% if current_user.lister? %>
+          <% if user_signed_in? && current_user.lister? %>
             <%= link_to 'My surpluses List', lister_surpluses_path %>
           <% end %>
             <%= link_to "Surpluses", surpluses_path, class: "nav-link" %>

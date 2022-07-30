@@ -2,6 +2,7 @@
   "name": "dont-trash-so-fast",
   "private": true,
   "dependencies": {
+    "@mapbox/mapbox-gl-geocoder": "^5.0.1",
     "@popperjs/core": "^2.11.5",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
@@ -11,6 +12,7 @@
     "mapbox-gl": "^2.9.2",
     "stimulus": "^3.0.1",
     "turbolinks": "^5.2.0",
+    "typed.js": "^2.0.12",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
   },
