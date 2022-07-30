@@ -3,13 +3,15 @@ class SurplusesController < ApplicationController
 
   def index
     @surpluses = policy_scope(Surplus).order(created_at: :desc)
-    @count = @surpluses.all.count
+    if params[:category].present?
+      @surpluses = @surpluses.includes(:user).where(user: { category: User.categories[params[:category]]})
+    end
     if params[:query].present?
       @surpluses = Surplus.search_by_name_and_location_and_quantity(params[:query])
-      @count = @surpluses.count
-    else
-      @surpluses.all
+
     end
+    @count = @surpluses.count
+
     @markers = @surpluses.geocoded.map do |surplus|
       {
         lat: surplus.latitude,
