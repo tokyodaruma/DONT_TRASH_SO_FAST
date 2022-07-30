@@ -14,7 +14,7 @@
           <p class="card-text"><%=  @surplus.description %></p>
           <h6>Pick up date and time</h6>
           <%= simple_form_for [@surplus, @booking] do |f| %>
-            <%= f.input :date, label: false %>
+            <%= f.input :date, label: false, as: :datetime %>
             <%= f.submit class: 'btn btn-success' %>
              <%= link_to 'Go Back', surpluses_path, class: 'btn btn-success' %>
           <% end %>
