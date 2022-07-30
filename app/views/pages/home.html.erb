@@ -6,12 +6,12 @@
     </div>
     <%= form_tag surpluses_path, method: :get do %>
     <div class="search-form-home-control form-group mt-5">
-      <input type="text"
-        name="query"
-        id="query"
-        class="form-control string required"
-        data-controller='search'
-        placeholder="Find local leftovers">
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control string required",
+        placeholder: "Find local leftovers",
+        data: { controller: 'search' }
+      %>
       <%= submit_tag "Submit", class: "btn btn-ghost" %>
     </div>
     <% end %>
