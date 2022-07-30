@@ -5,6 +5,7 @@ require 'date'
 puts 'Destroy previous seeds.'
 Booking.destroy_all
 Surplus.destroy_all
+User.destroy_all
 puts 'Planting new seeds.'
 
 zach = User.new(email: 'fake@fake.com', password: '1111111')
