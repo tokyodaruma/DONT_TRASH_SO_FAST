@@ -11,7 +11,7 @@ puts 'Planting new seeds.'
 zach = User.new(email: 'fake@fake.com', password: '1111111')
 zach.save
 
-10.times do
+9.times do
   file = URI.open('https://loremflickr.com/320/240/vegetable')
   surplus = Surplus.create!(
     category: Surplus.categories.keys.sample,
