@@ -1,8 +1,14 @@
 <%= simple_form_for @surplus, url: surpluses_path do |f| %>
-          <%= f.input :photo, as: :file %>
-          <%= f.input :category, collection: ["bakery", "butcher", "individual", "ngo", "restaurant", "others"]%>
-          <%= f.input :description %>
-          <%= f.input :location %>
-          <%= f.input :quantity %>
-          <%= f.submit class: 'btn btn-success' %>
-        <% end %>
+  <%= f.input :photo, as: :file %>
+  <%= f.input :name, label: false, placeholder: "Bread" %>
+  <%= f.input :category, label: "Group or individual?", collection: ["bakery", "butcher", "individual", "ngo", "restaurant"]%>
+  <%= f.input :description, label: false, placeholder: "Overbought bread this month" %>
+  <%= f.input :location,
+              label: false,
+              input_html: { data: { geocoder_target: "location" }, class: "d-none" },
+              wrapper_html: { data: { controller: "geocoder",
+              geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } }
+  %>
+  <%= f.input :quantity, label: false, placeholder: "How many?" %>
+  <%= f.submit class: 'btn btn-success' %>
+<% end %>

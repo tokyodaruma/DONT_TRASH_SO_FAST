@@ -53,6 +53,6 @@ class SurplusesController < ApplicationController
   end
 
   def surplus_params
-    params.require(:surplus).permit(:photo, :category, :description, :location, :quantity)
+    params.require(:surplus).permit(:photo, :category, :description, :location, :quantity, :name)
   end
 end
