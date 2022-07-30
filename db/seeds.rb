@@ -18,7 +18,7 @@ zach.save
     name: Faker::Food.vegetables,
     description: 'Hope to find a happy plate for these ingredients',
     location: ['Meguro, Tokyo', 'Kamata, Tokyo', 'Nagoya, Aichi', 'Sapporo, Hokkaido', 'Matsumoto, Nagano'].sample,
-    user_id: 1,
+    user: zach,
     quantity: rand(1..200)
   )
   surplus.photo.attach(io: file, filename: 'leftovers.png', content_type: 'image/png')
@@ -29,7 +29,7 @@ end
   Booking.create!(
     date: Date.today + rand(1..10),
     status: Booking.statuses.keys.sample,
-    user_id: 1,
+    user: zach,
     surplus_id: Surplus.all.sample.id
   )
   puts 'creating new booking entry based on user and surplus'
