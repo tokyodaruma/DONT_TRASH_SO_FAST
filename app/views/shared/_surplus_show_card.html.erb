@@ -8,7 +8,7 @@
     </div>
       <div class="card-body">
         <h4 class="card-title"> <%= image_tag "storefront.svg" %> <%= @surplus.category %></h4>
-        <h4 class="card-name"><%=  @surplus.name %> (Qty. <%= @surplus.quantity %>) </h4>
+        <h4 class="card-name"><%=  @surplus.name %> (Qty. <%= @surplus.quantity.to_s %>) </h4>
         <img src="<%= cl_image_path(@surplus.photo.key, width: 300, height: 300, crop: :fill) %>" alt="<%= @surplus.name %>" class="m-3">
         <div class="date-section">
           <p class="card-text"><%=  @surplus.description %></p>
