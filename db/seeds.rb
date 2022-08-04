@@ -8,7 +8,7 @@ Surplus.destroy_all
 User.destroy_all
 puts 'Planting new seeds.'
 
-zach = User.new(email: 'fake@fake.com', password: '1111111')
+zach = User.new(email: 'myfake@fake.com', password: '1111111', category:'individual')
 zach.save
 
 9.times do

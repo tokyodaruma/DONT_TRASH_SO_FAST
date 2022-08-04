@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :bookings
   has_many :surpluses, through: :bookings
+  enum category: %i[cafe ngo individual]
 
   def lister?
     self.surpluses.any?
